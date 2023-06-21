@@ -1,0 +1,3 @@
+[submodule "www/3p/quasar-draggable-tree"]
+	path = www/3p/quasar-draggable-tree
+	url = git@github.com:x007007007/quasar-draggable-tree.git

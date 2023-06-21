@@ -1,0 +1,22 @@
+
+{% macro render_item_node(node, indent) -%}
+Section "{{ node.name }}" {{ node.id }}{% filter indent(width=indent) %}
+SetOutPath "{{ node.sec.extract_folder }}"
+File "{{ node.sec.exe_path }}"
+ExecWait "{{ node.sec.extract_folder }}\{{ node.sec.exe_name }}"
+Delete "{{ node.sec.extract_folder }}\{{ node.sec.exe_name }}"
+{% endfilter %}SectionEnd
+{%- endmacro %}
+
+
+{% macro render_tree_node_list(node_list, indent) -%}
+{% for node in node_list -%}{% if node.groups -%}{% filter indent(width=indent) -%}
+SectionGroup "{{ node.name }}"
+{{ render_tree_node_list(node.groups, indent) }}{% endfilter -%}
+SectionGroupEnd
+{% elif node.sec -%}
+{{ render_item_node(node, indent) }}
+{% endif -%}
+{% endfor -%}
+
+{%- endmacro %}

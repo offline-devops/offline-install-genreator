@@ -31,7 +31,8 @@
     "eslint-plugin-vue": "^9.0.0",
     "eslint-webpack-plugin": "^3.1.1",
     "prettier": "^2.5.1",
-    "quasar-app-extension-qdraggabletree": "file:///Users\\xxc\\workspace\\autoinstall-py\\quasar-draggable-tree\\app-extension"
+    "quasar-ui-qdraggabletree": "file:3p/quasar-draggable-tree/ui",
+    "quasar-app-extension-qdraggabletree": "file:3p/quasar-draggable-tree/app-extension"
   },
   "browserslist": [
     "last 10 Chrome versions",
